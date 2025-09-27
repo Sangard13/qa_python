@@ -11,7 +11,6 @@ class TestBooksCollector:
 
     def test_add_new_book_valid_and_invalid(self, collector):
         """Тестирование добавления книг с валидными и невалидными названиями"""
-        # Успешное добавление
         collector.add_new_book('Хроники Амбера')
         assert 'Хроники Амбера' in collector.books_genre
         assert collector.books_genre['Хроники Амбера'] == ''
