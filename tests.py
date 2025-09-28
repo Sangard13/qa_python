@@ -10,16 +10,13 @@ class TestBooksCollector:
 
     def test_add_new_book_valid_and_invalid(self, collector):
         """Тестирование добавления книг с валидными и невалидными названиями"""
-        # Успешное добавление
         collector.add_new_book('Хроники Амбера')
         assert 'Хроники Амбера' in collector.books_genre
         assert collector.books_genre['Хроники Амбера'] == ''
 
-        # Дубликат
         collector.add_new_book('Хроники Амбера')
         assert len(collector.books_genre) == 1
 
-        # Невалидные названия
         collector.add_new_book('')
         collector.add_new_book('А' * 41)
         assert '' not in collector.books_genre
@@ -107,7 +104,6 @@ class TestBooksCollector:
         assert 'Задверье' not in collector.favorites
         assert 'Сага о копье' in collector.favorites
 
-        # Удаление не из избранного
         collector.delete_book_from_favorites('Несуществующая')
         assert len(collector.favorites) == 1
 
@@ -152,21 +148,17 @@ class TestBooksCollector:
 
     def test_comprehensive_workflow(self, collector):
         """Комплексный тест полного workflow приложения"""
-        # Добавление книг
         books = ['Дракула', 'Франкенштейн', 'Кентервильское привидение']
         for book in books:
             collector.add_new_book(book)
 
-        # Установка жанров
         collector.set_book_genre('Дракула', 'Ужасы')
         collector.set_book_genre('Франкенштейн', 'Ужасы')
         collector.set_book_genre('Кентервильское привидение', 'Комедии')
 
-        # Работа с избранным
         collector.add_book_in_favorites('Дракула')
         collector.add_book_in_favorites('Кентервильское привидение')
 
-        # Проверка различных методов
         assert collector.get_book_genre('Дракула') == 'Ужасы'
         assert len(collector.get_books_with_specific_genre('Ужасы')) == 2
         assert 'Кентервильское привидение' in collector.get_books_for_children()
