@@ -1,0 +1,40 @@
+Index: qa_python/README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># qa_python\r\nТесты для BooksCollector\r\n\r\ntest_initial_state - проверка первоначального состояния\r\ntest_add_new_book_correct_add_book_successful_add - проверка добавления книги в словарь без жанра\r\ntest_add_new_book_incorrect_add_book_unsuccessful_add - проверка добавления книги в словарь\r\ntest_set_book_genre_correct_genre_success - проверка на успешную установку жанра из списка\r\ntest_set_book_genre_incorrect_genre_unsuccess - проверку жанр не входящий в список не устанавливается\r\ntest_get_book_genre - получение книг по жанрам\r\ntest_get_books_with_specific_genre - проверка выведения списка книг с определенным жанром\r\ntest_get_books_genre - проверка получения списка книг\r\ntest_get_books_for_children - проверка возврата детских книг\r\ntest_add_book_in_favorites - проверка добавления книги в избранное\r\ntest_delete_book_from_favorites - проверка удаления книги из избранного\r\ntest_get_list_of_favorites_books - проверка получения списка избранных книг
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/qa_python/README.md b/qa_python/README.md
+--- a/qa_python/README.md	(revision 441fd18c7284d4a0f0e4855d27d6a765de3cac26)
++++ b/qa_python/README.md	(date 1759662461766)
+@@ -1,15 +1,15 @@
+ # qa_python
+ Тесты для BooksCollector
+ 
+-test_initial_state - проверка первоначального состояния
+-test_add_new_book_correct_add_book_successful_add - проверка добавления книги в словарь без жанра
+-test_add_new_book_incorrect_add_book_unsuccessful_add - проверка добавления книги в словарь
+-test_set_book_genre_correct_genre_success - проверка на успешную установку жанра из списка
+-test_set_book_genre_incorrect_genre_unsuccess - проверку жанр не входящий в список не устанавливается
+-test_get_book_genre - получение книг по жанрам
+-test_get_books_with_specific_genre - проверка выведения списка книг с определенным жанром
+-test_get_books_genre - проверка получения списка книг
+-test_get_books_for_children - проверка возврата детских книг
+-test_add_book_in_favorites - проверка добавления книги в избранное
+-test_delete_book_from_favorites - проверка удаления книги из избранного
+-test_get_list_of_favorites_books - проверка получения списка избранных книг
+\ No newline at end of file
++test_add_new_book_valid_and_invalid - Тестирование добавления книг с валидными и невалидными названиями, включая обработку дубликатов
++test_set_book_genre_scenarios - Тестирование установки жанра в различных сценариях, включая несуществующие книги и жанры
++test_get_book_genre_functionality - Тестирование получения жанра книги для разных случаев: с установленным жанром, без жанра и несуществующей книги
++test_get_books_with_specific_genre - Тестирование фильтрации книг по конкретному жанру и корректности возвращаемого списка
++test_get_books_for_children_age_restriction - Тестирование фильтрации книг для детей с проверкой возрастных ограничений по жанрам
++test_add_to_favorites_functionality - Тестирование добавления книг в избранное, включая обработку дубликатов и несуществующих книг
++test_delete_from_favorites_functionality - Тестирование удаления книг из избранного и обработки попыток удаления несуществующих книг
++test_get_list_of_favorites_books - Тестирование получения списка избранных книг и его корректности
++test_get_books_genre_method - Тестирование получения всего словаря книг с их жанрами
++test_initial_state_of_collector - Проверка начального состояния коллектора, включая инициализацию словарей и списков
++test_empty_favorites_list - Тестирование поведения методов при пустом списке избранного
++test_comprehensive_workflow - Комплексный тест полного workflow приложения от добавления книг до работы с избранным
+\ No newline at end of file
